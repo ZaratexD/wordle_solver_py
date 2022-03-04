@@ -23,9 +23,11 @@ class Game:
             for word in words:
                 word = word.strip()
                 if len(word) == 5:
-                    word_dict[word] = len(word)
+                    word_dict[word] = self.num_of_repeated(word)
             print(str(len(word_dict)))
             print(str(word_dict))
+            print()
+
             """
             for word in words:
                 if len(word) != 5:
@@ -40,4 +42,15 @@ class Game:
 
 
     def num_of_repeated(self, word):
-        print("inside Game > Rand")
+        count = 0
+        word = list(word)
+        # print(str(word))
+        # print(word[1])
+        # this is gonna be O^2 can make it less run time by remove letters as i say redundancy but double redundancy?
+        # applies to 5 letter words?
+        for i in range(len(word)):
+            for j in range(i + 1, len(word)):
+                if word[i] == word[j]:
+                    count += 1
+        return count
+
