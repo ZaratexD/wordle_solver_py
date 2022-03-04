@@ -8,7 +8,7 @@ from game import Game
 
 
 def main():
-    curr = Game("joe")
+    curr = Game("short.txt")
 
 
 if __name__ == '__main__':
